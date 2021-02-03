@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE"></title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/blog/images/favicon.png}">
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/blog/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+
+    <!--Default CSS-->
+    <link th:href="@{/blog/css/default.css}" rel="stylesheet" type="text/css">
+
+    <!--Custom CSS-->
+    <link th:href="@{/blog/css/style.css}"  rel="stylesheet" type="text/css">
+
+    <!--Plugin CSS-->
+    <link th:href="@{/blog/css/plugin.css}" rel="stylesheet" type="text/css">
+
+    <!--Font Icons-->
+    <link th:href="@{/blog/css/font-awesome.css}"  rel="stylesheet" type="text/css">
+</head>
+<body class="home-1">
+<!--PRELOADER-->
+<div id="preloader">
+    <div id="status"></div>
+</div>
+<!--*Header*-->
+<div th:insert="~{/basefragments/blog/header.html :: header}"></div>
+<!--* End Header*-->
+
+<!-- Slider -->
+<div th:insert="~{/basefragments/blog/slider.html :: slider}"></div>
+<!-- End Slider -->
+<section layout:fragment="content">
+
+</section>
+
+
+
+<div class="mt_instagram">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_01.jpg" alt="Image"></a></div>
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_02.jpg" alt="Image"></a></div>
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_03.jpg" alt="Image"></a></div>
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_04.jpg" alt="Image"></a></div>
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_05.jpg" alt="Image"></a></div>
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_06.jpg" alt="Image"></a></div>
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_07.jpg" alt="Image"></a></div>
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_08.jpg" alt="Image"></a></div>
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_09.jpg" alt="Image"></a></div>
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_10.jpg" alt="Image"></a></div>
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_11.jpg" alt="Image"></a></div>
+            <div class="col-sm-2 col-xs-6"><a href="#"><img src="images/insta/insta_12.jpg" alt="Image"></a></div>
+        </div>
+        <div class="sectio-title">
+            <h3 class="mar-0"><a href="#">Follow @ Instagram</a></h3>
+        </div>
+    </div>
+</div>
+<!--*Footer*-->
+<div th:insert="~{/basefragments/blog/footer.html :: footer}"></div>
+<!--* End Footer*-->
+
+<!-- back to top -->
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="" data-placement="left">
+    <span class="fa fa-arrow-up"></span>
+</a>
+<!-- search popup -->
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="type keyword(s) here" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+<th:block layout:fragment="script">
+    <!-- Latest jquery --><script th:src="@{/blog/js/jquery-3.2.1.min.js}"></script>
+    <!-- Plugin Jquery --><script th:src="@{/blog/js/plugin.js}"></script>
+    <!-- custom nav jquery --><script th:src="@{/blog/js/custom-nav.js}"></script>
+    <!-- main default Jquery --><script th:src="@{/blog/js/main.js}"></script>
+</th:block>
+<!--*Scripts*-->
+
+</body>
+</html>
