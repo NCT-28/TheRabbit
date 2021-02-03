@@ -18,7 +18,7 @@ import vn.com.rabbit.service.AccountService;
 @RequestMapping(value = "/")
 public class HomeController {
 
-	private static  String pathBody = "bodyfragments/blog";
+	private static  String pathBody = "bodyfragments/blog/";
 
 	@Autowired
 	private AccountService userService;
@@ -28,12 +28,12 @@ public class HomeController {
 
 	@GetMapping(value = { "" })
 	public String homePage() {
-		return pathBody + "/index";
+		return pathBody + "index";
 	}
 
 	@GetMapping(value = "auth/login")
 	public String loginPage(Model model) {
-		return "login";
+		return pathBody+ "login";
 	}
 
 	@GetMapping(value = "auth/register")

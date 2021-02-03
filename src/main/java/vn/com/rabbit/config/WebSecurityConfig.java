@@ -63,15 +63,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         // Cấu hình cho Login Form.
         http.authorizeRequests().and().formLogin()//
+
                 // Submit URL của trang login
-                .loginProcessingUrl("/j_spring_security_check") // Submit URL
-                .loginPage("/login")//
-                .defaultSuccessUrl("/userAccountInfo")//
-                .failureUrl("/login?error=true")//
-                .usernameParameter("username")//
+                .loginProcessingUrl("/auth/logins") // Submit URL
+                .loginPage("/login")
+                .defaultSuccessUrl("/quan-tri")
+                .failureUrl("/auth/login?error=true")
+                .usernameParameter("username")
                 .passwordParameter("password")
+
                 // Cấu hình cho Logout Page.
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/logoutSuccessful");
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/index");
 
         // Cấu hình Remember Me.
         http.authorizeRequests().and() //
