@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,12 +27,19 @@ import vn.com.rabbit.service.CategoryService;
 @RequestMapping(value = "/quan-tri/category")
 public class CategoryController extends BaseCrudImplController<Category> {
 
-	
+	private static  String pathBody = "bodyfragments/admin/";
 	private final CategoryService categoryService;
 	
 	protected CategoryController(CategoryService service) {
 		super(service);
 		this.categoryService = service;
+	}
+	@GetMapping(value = { "" })
+	public String homePage(Model model, Principal principal) {
+//		String userName = principal.getName();
+//		System.out.println("User Name: " + userName);
+		model.addAttribute("isActive", true);
+		return pathBody + "bl_category";
 	}
 
 	@PostMapping(value = "/add-update-category")

@@ -8,12 +8,12 @@ import java.security.Principal;
 
 @Controller(value = "HomeControllerOfAdmin")
 public class HomeController {
-	
+	private static  String pathBody = "bodyfragments/admin/";
 	@GetMapping(value = { "/quan-tri" })
 	public String homePage(Model model, Principal principal) {
 //		String userName = principal.getName();
 //		System.out.println("User Name: " + userName);
-		return "admin/index";
+		return pathBody + "index";
 	}
 	
 	@GetMapping(value = { "/quan-tri/tai-khoan/role" })
